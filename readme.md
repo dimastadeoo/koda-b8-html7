@@ -14,3 +14,7 @@ Implementasi
 Program yang sudah diberi logic
 
 <img src="127.0.0.1_3000_ (5).png" width="400px">
+
+record program
+
+![alt text](<Recording 2026-06-09 at 15.04.51.gif>)
