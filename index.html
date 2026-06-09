@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neumorphic Calculator Grid</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
+
 <body>
 
-    <div class="calculator">  
+    <div class="calculator">
         <div class="buttons-calc">
             <div class="screen">
                 <span class="result">0</span>
@@ -39,5 +42,110 @@
         </div>
     </div>
 
+    <script>
+        $(function () {
+            const screen = $('.result');
+            let currentInput = '';
+            let isCalculated = false;
+
+            const filNumb = $('.btn').filter(function () {
+                const teks = $(this).text();
+                return !isNaN(teks) || teks === '.';
+            });
+
+            const fillOperate = $('.btn').filter(function () {
+                const teks = $(this).text();
+                return ['+', '-', '*', '/', '%'].includes(teks);
+            });
+
+            const fillDelClearResult = $('.btn').filter(function () {
+                const teks = $(this).text()
+                return ['clr', 'DEL', '='].includes(teks);
+            });
+
+            filNumb.on('click', function () {
+                const value = $(this).text();
+
+                if (isCalculated) {
+                    currentInput = '';
+                    isCalculated = false;
+                }
+
+                if (value === '.' && currentInput.includes('.')) {
+                    const lastOperatorIndex = Math.max(
+                        currentInput.lastIndexOf('+'),
+                        currentInput.lastIndexOf('-'),
+                        currentInput.lastIndexOf('*'),
+                        currentInput.lastIndexOf('/')
+                    );
+                    const currentNumber = currentInput.slice(lastOperatorIndex + 1);
+                    if (currentNumber.includes('.')) return;
+                }
+
+                if (currentInput === '0' && value !== '.') {
+                    currentInput = value;
+                } else {
+                    currentInput += value;
+                }
+
+                screen.text(currentInput);
+            });
+
+            fillOperate.on('click', function () {
+                const operator = $(this).text();
+                isCalculated = false;
+
+                if (currentInput === '' && operator !== '-') return;
+
+                const lastChar = currentInput.slice(-1);
+                if (['+', '-', '*', '/', '%'].includes(lastChar)) {
+                    currentInput = currentInput.slice(0, -1) + operator;
+                } else {
+                    currentInput += operator;
+                }
+
+                screen.text(currentInput);
+            });
+
+            fillDelClearResult.on('click', function () {
+                const btn = $(this).text()
+
+                if (btn === 'clr') {
+                    currentInput = '';
+                    screen.text('0');
+                } else if (btn === 'DEL') {
+                    if (isCalculated) {
+                        currentInput = '';
+                        screen.text('0');
+                        isCalculated = false;
+                        return;
+                    }
+                    currentInput = currentInput.slice(0, -1);
+                    screen.text(currentInput === '' ? '0' : currentInput);
+                } else {
+                    if (currentInput === '') return;
+
+                    try {
+                        let expression = currentInput.replace(/%/g, '/100');
+                        let result = eval(expression);
+
+                        if (result % 1 !== 0) {
+                            result = parseFloat(result.toFixed(4));
+                        }
+
+                        screen.text(result);
+                        currentInput = result.toString();
+                        isCalculated = true;
+                    } catch (error) {
+                        screen.text('Error');
+                        currentInput = '';
+                    }
+                }
+            })
+
+        });
+    </script>
+
 </body>
+
 </html>

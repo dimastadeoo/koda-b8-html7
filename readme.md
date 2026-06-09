@@ -1,4 +1,7 @@
-## Preview Contoh dan implementasi penerapan menggunakan grid
+# Program kalkulator dengan javascript DOM
+## Ini merupakan program kalkulator dengan Javascript DOM menggunakan library jQuery
+
+Berikut adalah implementasi dari desain kalkulator dan logic dari kalkulator menggunakan javascript DOM menggunakan library jQuery
 
 Contoh:
 
@@ -7,3 +10,7 @@ Contoh:
 Implementasi
 
 <img src="Cuplikan layar 2026-06-02 142514.png" width="400px">
+
+Program yang sudah diberi logic
+
+<img src="127.0.0.1_3000_ (5).png" width="400px">
