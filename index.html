@@ -5,146 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neumorphic Calculator Grid</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script data-main="/src/js/lib/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 </head>
 
-<body>
+<body class="bg-[#EECCFF] font-['Inter',sans-serif] min-h-screen grid place-items-center m-0 p-0 box-border">
 
-    <div class="calculator">
-        <div class="buttons-calc">
-            <div class="screen">
-                <span class="result">0</span>
+    <div class="calculator w-[360px] bg-[#F9F9F9] rounded-[40px] p-8">
+        <div class="buttons-calc grid grid-cols-4 gap-4">
+            
+            <div class="screen bg-[#EBF4F3] h-20 rounded-[24px] px-6 col-span-4 flex items-center justify-end text-right shadow-[6px_6px_12px_rgba(0,0,0,0.06)]">
+                <span class="result text-[48px] text-[#737477] font-normal">0</span>
             </div>
-            <button class="btn text-dark">clr</button>
-            <button class="btn text-dark">DEL</button>
-            <button class="btn text-dark">%</button>
-            <button class="btn text-dark">/</button>
+            
+            <button class="btn text-dark h-14 bg-[#ECF0F3] border-none rounded-full text-[16px] font-bold text-[#392B17] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">clr</button>
+            <button class="btn text-dark h-14 bg-[#ECF0F3] border-none rounded-full text-[16px] font-bold text-[#392B17] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">DEL</button>
+            <button class="btn text-dark h-14 bg-[#ECF0F3] border-none rounded-full text-[16px] font-bold text-[#392B17] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">%</button>
+            <button class="btn text-dark h-14 bg-[#ECF0F3] border-none rounded-full text-[16px] font-bold text-[#392B17] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">/</button>
 
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn text-dark">*</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">7</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">8</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">9</button>
+            <button class="btn text-dark h-14 bg-[#ECF0F3] border-none rounded-full text-[16px] font-bold text-[#392B17] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">*</button>
 
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn text-dark">-</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">4</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">5</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">6</button>
+            <button class="btn text-dark h-14 bg-[#ECF0F3] border-none rounded-full text-[16px] font-bold text-[#392B17] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">-</button>
 
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn text-dark">+</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">1</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">2</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">3</button>
+            <button class="btn text-dark h-14 bg-[#ECF0F3] border-none rounded-full text-[16px] font-bold text-[#392B17] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">+</button>
 
-            <button class="btn">.</button>
-            <button class="btn">0</button>
-            <button class="btn btn-equal">=</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">.</button>
+            <button class="btn h-14 bg-[#ECF0F3] border-none rounded-full text-[18px] font-medium text-[#333333] cursor-pointer outline-none shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">0</button>
+            <button class="btn btn-equal h-14 bg-[#E2ADCB] text-[#333333] text-[22px] col-span-2 rounded-[28px] shadow-[6px_6px_12px_rgba(0,0,0,0.06)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05)]">=</button>
         </div>
     </div>
-
-    <script>
-        $(function () {
-            const screen = $('.result');
-            let currentInput = '';
-            let isCalculated = false;
-
-            const filNumb = $('.btn').filter(function () {
-                const teks = $(this).text();
-                return !isNaN(teks) || teks === '.';
-            });
-
-            const fillOperate = $('.btn').filter(function () {
-                const teks = $(this).text();
-                return ['+', '-', '*', '/', '%'].includes(teks);
-            });
-
-            const fillDelClearResult = $('.btn').filter(function () {
-                const teks = $(this).text()
-                return ['clr', 'DEL', '='].includes(teks);
-            });
-
-            filNumb.on('click', function () {
-                const value = $(this).text();
-
-                if (isCalculated) {
-                    currentInput = '';
-                    isCalculated = false;
-                }
-
-                if (value === '.' && currentInput.includes('.')) {
-                    const lastOperatorIndex = Math.max(
-                        currentInput.lastIndexOf('+'),
-                        currentInput.lastIndexOf('-'),
-                        currentInput.lastIndexOf('*'),
-                        currentInput.lastIndexOf('/')
-                    );
-                    const currentNumber = currentInput.slice(lastOperatorIndex + 1);
-                    if (currentNumber.includes('.')) return;
-                }
-
-                if (currentInput === '0' && value !== '.') {
-                    currentInput = value;
-                } else {
-                    currentInput += value;
-                }
-
-                screen.text(currentInput);
-            });
-
-            fillOperate.on('click', function () {
-                const operator = $(this).text();
-                isCalculated = false;
-
-                if (currentInput === '' && operator !== '-') return;
-
-                const lastChar = currentInput.slice(-1);
-                if (['+', '-', '*', '/', '%'].includes(lastChar)) {
-                    currentInput = currentInput.slice(0, -1) + operator;
-                } else {
-                    currentInput += operator;
-                }
-
-                screen.text(currentInput);
-            });
-
-            fillDelClearResult.on('click', function () {
-                const btn = $(this).text()
-
-                if (btn === 'clr') {
-                    currentInput = '';
-                    screen.text('0');
-                } else if (btn === 'DEL') {
-                    if (isCalculated) {
-                        currentInput = '';
-                        screen.text('0');
-                        isCalculated = false;
-                        return;
-                    }
-                    currentInput = currentInput.slice(0, -1);
-                    screen.text(currentInput === '' ? '0' : currentInput);
-                } else {
-                    if (currentInput === '') return;
-
-                    try {
-                        let expression = currentInput.replace(/%/g, '/100');
-                        let result = eval(expression);
-
-                        if (result % 1 !== 0) {
-                            result = parseFloat(result.toFixed(4));
-                        }
-
-                        screen.text(result);
-                        currentInput = result.toString();
-                        isCalculated = true;
-                    } catch (error) {
-                        screen.text('Error');
-                        currentInput = '';
-                    }
-                }
-            })
-
-        });
-    </script>
 
 </body>
 
