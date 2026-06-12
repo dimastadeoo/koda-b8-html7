@@ -1,4 +1,7 @@
-define(['jquery', 'calc'], function ($, calc) {
+define(function (require) {
+    const $ = require('jquery')
+    const calc = require('calc') 
+    
 
     $(function () {
         const screen = $('.result');
