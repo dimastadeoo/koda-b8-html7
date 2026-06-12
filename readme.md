@@ -1,9 +1,6 @@
 # Program kalkulator dengan javascript DOM
 ## Ini merupakan program kalkulator dengan Javascript DOM menggunakan library jQuery
 
-Berikut adalah implementasi dari desain kalkulator dan logic dari kalkulator menggunakan javascript DOM menggunakan library jQuery
-
-
  <table>
     <tr>
         <td>
@@ -26,3 +23,7 @@ Berikut adalah implementasi dari desain kalkulator dan logic dari kalkulator men
 record program
 
 ![alt text](<Recording 2026-06-09 at 15.04.51.gif>)
+
+Berikut adalah implementasi dari desain kalkulator yang menggunakan style tailwindcss dan logic dari kalkulator menggunakan javascript DOM menggunakan library jQuery, dan menggunakan require.js untuk module js dimana ini digunakan untuk menampung semua kebutuhan logic yang digunakan untuk DOM pada aplikasi kalkulator. 
+
+untuk program berjalan seperti kalkulator pada umumnya dimana ketika ada banyak operasi berlangsung akan menyesuaikan yang perkalian atau pembagian akan dikerjakan lebih dulu, dengan mengunakan function bawaan js yaitu eval, dimana fungsi ini akan kode js yang berupa string
